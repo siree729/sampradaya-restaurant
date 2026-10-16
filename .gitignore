@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor & System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Reference & temporary files
+REFERNCE/
+extracted_images/
+__pycache__/
+*.pyc
+parse_report.txt
+
+# Scratch investigation scripts
+check_*.py
+dump_step.py
+extract_pdf_images.py
+find_logo.py
+inspect_menu.py
+parse_all_pages.py
+search_user_images.py

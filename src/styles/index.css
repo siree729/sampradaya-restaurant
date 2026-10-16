@@ -1,0 +1,331 @@
+/* ==========================================================================
+   Sri Sampradaya Family Restaurant & Banquet Hall - Global CSS Design System
+   ========================================================================== */
+
+:root {
+  /* Brand Color Tokens */
+  --color-burgundy-deep: #641A16;
+  --color-maroon-dark: #3B100C;
+  --color-maroon-darker: #240806;
+  --color-burgundy-light: #852620;
+  --color-gold: #D5AD58;
+  --color-gold-light: #F2D999;
+  --color-gold-dark: #AC8532;
+  --color-gold-glow: rgba(213, 173, 88, 0.25);
+  --color-gold-border: rgba(213, 173, 88, 0.4);
+  
+  --color-cream: #FFF7EA;
+  --color-cream-soft: #FBF4E9;
+  --color-cream-darker: #EFE4D2;
+  --color-white: #FFFFFF;
+  --color-chocolate: #2D211D;
+  --color-charcoal: #1D1513;
+  --color-text-muted: #6B5B55;
+  --color-text-light: #E4D8CC;
+  
+  /* Status Colors */
+  --color-veg: #1B833D;
+  --color-veg-bg: #E8F5E9;
+  --color-nonveg: #C62828;
+  --color-nonveg-bg: #FFEBEE;
+  
+  /* Typography */
+  --font-royal: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 6px rgba(45, 33, 29, 0.08);
+  --shadow-md: 0 6px 16px rgba(45, 33, 29, 0.12);
+  --shadow-lg: 0 12px 32px rgba(45, 33, 29, 0.16);
+  --shadow-gold: 0 8px 24px rgba(213, 173, 88, 0.25);
+  --shadow-dark: 0 16px 40px rgba(0, 0, 0, 0.4);
+  
+  /* Layout & Spacing */
+  --container-max: 1240px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-chocolate);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-royal);
+  color: var(--color-burgundy-deep);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Section Header Motif */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(213, 173, 88, 0.15);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-pill);
+  color: var(--color-burgundy-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-badge.on-dark {
+  background: rgba(213, 173, 88, 0.18);
+  color: var(--color-gold-light);
+  border-color: rgba(213, 173, 88, 0.6);
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  margin-bottom: 14px;
+}
+
+.section-title.on-dark {
+  color: var(--color-white);
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.section-subtitle.on-dark {
+  color: var(--color-text-light);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Ornamental Divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 14px auto 28px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.ornament-diamond {
+  width: 9px;
+  height: 9px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px var(--color-gold);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #E6C26E 0%, #C89938 100%);
+  color: var(--color-maroon-darker);
+  box-shadow: 0 4px 18px rgba(213, 173, 88, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #F0D286 0%, #D8A948 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(213, 173, 88, 0.5);
+  color: #170503;
+}
+
+.btn-burgundy {
+  background: var(--color-burgundy-deep);
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-gold-border);
+  box-shadow: 0 4px 16px rgba(100, 26, 22, 0.35);
+}
+
+.btn-burgundy:hover {
+  background: var(--color-burgundy-light);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(100, 26, 22, 0.45);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold-light);
+  border: 1.5px solid var(--color-gold);
+}
+
+.btn-outline-gold:hover {
+  background: rgba(213, 173, 88, 0.15);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+/* Dietary Indicators */
+.diet-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 3px;
+  background: var(--color-white);
+  border: 1.5px solid;
+  flex-shrink: 0;
+}
+
+.diet-badge.veg {
+  border-color: var(--color-veg);
+}
+
+.diet-badge.veg::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-veg);
+}
+
+.diet-badge.non-veg {
+  border-color: var(--color-nonveg);
+}
+
+.diet-badge.non-veg::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-nonveg);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(213, 173, 88, 0.25);
+}
+
+.glass-panel-dark {
+  background: rgba(43, 12, 9, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(213, 173, 88, 0.3);
+}
+
+/* Accessibility / Focus states */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
